@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Microblog — Sivanesh T</title>
+  <meta name="description" content="Simple microblog UI — responsive layout with posts and a compose box.">
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="#">Microblog</a>
+      <nav class="nav">
+        <a href="#" class="nav-link">Home</a>
+        <a href="#" class="nav-link">Explore</a>
+        <a href="#" class="nav-link">Profile</a>
+      </nav>
+      <div class="user">
+        <div class="avatar">PB</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container layout">
+    <!-- Left column: feed -->
+    <section class="feed">
+      <aside class="compose card">
+        <div class="compose-header">
+          <div class="avatar small">PB</div>
+          <div>
+            <div class="name">Sivanesh T</div>
+            <div class="muted">B.Tech · Web & Software Dev</div>
+          </div>
+        </div>
+
+        <!-- Static compose box (requires JS/backend to be functional) -->
+        <form class="compose-form" onsubmit="return false;">
+          <textarea placeholder="What's happening?" rows="4" aria-label="Write a new post"></textarea>
+          <div class="compose-actions">
+            <div class="hint">Press Ctrl+Enter to post (needs JS)</div>
+            <button class="btn primary" type="submit">Post</button>
+          </div>
+        </form>
+      </aside>
+
+      <section class="posts">
+        <!-- Sample post -->
+        <article class="post card">
+          <div class="post-head">
+            <div class="avatar">PB</div>
+            <div class="post-meta">
+              <div class="name">Sivanesh T <span class="muted small">@pravinb · 2h</span></div>
+              <div class="muted">B.Tech · Interested in Data Science</div>
+            </div>
+          </div>
+          <p class="post-body">Built a small responsive microblog UI today. Planning to add Node.js backend next. #webdev #learning</p>
+          <div class="post-actions">
+            <button class="icon">💬 3</button>
+            <button class="icon">🔁 1</button>
+            <button class="icon">❤️ 12</button>
+          </div>
+        </article>
+
+        <!-- More sample posts -->
+        <article class="post card">
+          <div class="post-head">
+            <div class="avatar">AL</div>
+            <div class="post-meta">
+              <div class="name">A. Lee <span class="muted small">@alee · 1d</span></div>
+            </div>
+          </div>
+          <p class="post-body">Sharing my notes on learning Python basics — loops, functions, and a few useful libraries to try.</p>
+          <div class="post-actions">
+            <button class="icon">💬 0</button>
+            <button class="icon">🔁 0</button>
+            <button class="icon">❤️ 4</button>
+          </div>
+        </article>
+
+        <article class="post card">
+          <div class="post-head">
+            <div class="avatar">JS</div>
+            <div class="post-meta">
+              <div class="name">J. Singh <span class="muted small">@jsingh · 3d</span></div>
+            </div>
+          </div>
+          <p class="post-body">How do you structure small projects? I prefer keeping simple README + issues + small CI.</p>
+          <div class="post-actions">
+            <button class="icon">💬 8</button>
+            <button class="icon">🔁 2</button>
+            <button class="icon">❤️ 22</button>
+          </div>
+        </article>
+      </section>
+    </section>
+
+    <!-- Right column: sidebar -->
+    <aside class="sidebar">
+      <div class="card">
+        <h3>About</h3>
+        <p class="muted small">This is a static microblog UI. Add JavaScript or a backend (Node, Firebase, etc.) to save posts, like, and comment.</p>
+      </div>
+
+      <div class="card trends">
+        <h3>Trending</h3>
+        <ul>
+          <li>#WebDev</li>
+          <li>#DataScience</li>
+          <li>#Python</li>
+        </ul>
+      </div>
+
+      <div class="card follow">
+        <h3>Who to follow</h3>
+        <div class="follow-suggestion">
+          <div class="avatar tiny">AL</div>
+          <div>
+            <div class="name">A. Lee</div>
+            <div class="muted small">@alee</div>
+          </div>
+          <button class="btn small">Follow</button>
+        </div>
+
+        <div class="follow-suggestion">
+          <div class="avatar tiny">JS</div>
+          <div>
+            <div class="name">J. Singh</div>
+            <div class="muted small">@jsingh</div>
+          </div>
+          <button class="btn small">Follow</button>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small class="muted">© <span id="year"></span> Microblog — built by Pravin B</small>
+    </div>
+  </footer>
+
+  <!-- NOTE: no JS included — add interactivity with JS or backend as needed -->
+  <script>
+    // small helper for current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
